@@ -1,28 +1,24 @@
-import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
-import HomeScreen from '@screens/HomeScreen';
+import { createStackNavigator } from '@react-navigation/stack';
 import ModalScreen from '@screens/ModalScreen';
-import {FC} from 'react';
+import { FC } from 'react';
 import * as React from 'react';
-import {TouchableOpacity} from 'react-native';
-import {XMarkIcon} from 'react-native-heroicons/solid';
-import {useNavigation, useTheme} from '@react-navigation/native';
-import {GenericNavigationProps} from '@routes/types';
+import { TouchableOpacity } from 'react-native';
+import { XMarkIcon } from 'react-native-heroicons/solid';
+import { useNavigation, useTheme } from '@react-navigation/native';
+import { GenericNavigationProps } from '@routes/types';
+import MainTabs from '@routes/tabs/MainTabs';
 
 const MainStack = createStackNavigator();
 
 const MainStackScreen: FC = () => {
-  const {colors} = useTheme();
+  const { colors } = useTheme();
   const navigation = useNavigation<GenericNavigationProps>();
   return (
     <MainStack.Navigator>
       <MainStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          headerShown: false,
-          headerTitleAlign: 'center',
-          ...TransitionPresets.SlideFromRightIOS,
-        }}
+        name="Root"
+        options={{ headerShown: false }}
+        component={MainTabs}
       />
       <MainStack.Screen
         name="Modal"
@@ -35,8 +31,9 @@ const MainStackScreen: FC = () => {
           headerRight: () => (
             <TouchableOpacity
               className="mr-4"
-              onPress={() => navigation.goBack()}>
-              <XMarkIcon color={colors.background} />
+              onPress={() => navigation.goBack()}
+            >
+              <XMarkIcon color={colors.text} />
             </TouchableOpacity>
           ),
         }}

@@ -25,7 +25,7 @@ const LoginScreen: FC<LoginScreenProps> = () => {
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
-            className="border-2 bg-white p-4 border-orange-500 w-full rounded-md mb-4"
+            className="border-2 bg-white p-4 border-pink-500 w-full rounded-md mb-4"
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -43,7 +43,7 @@ const LoginScreen: FC<LoginScreenProps> = () => {
         }}
         render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
-            className="border-2 bg-white p-4 border-orange-500 w-full rounded-md mb-4"
+            className="border-2 bg-white p-4 border-pink-500 w-full rounded-md mb-4"
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
