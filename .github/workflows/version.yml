@@ -1,4 +1,4 @@
-- name: 'Automated Version Bump'
-  uses: 'phips28/gh-action-bump-version@master'
+name: 'Automated Version Bump'
+uses: 'phips28/gh-action-bump-version@master'
   with:
     commit-message: 'CI: bumps version to {{version}} [skip ci]'
