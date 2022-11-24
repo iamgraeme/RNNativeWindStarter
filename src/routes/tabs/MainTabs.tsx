@@ -2,7 +2,11 @@ import React, { FC } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@screens/HomeScreen';
 import TopTabs from '@routes/tabs/TopTabs';
-import { Cog6ToothIcon, HomeIcon } from 'react-native-heroicons/solid';
+import {
+  Cog6ToothIcon,
+  Cog8ToothIcon,
+  HomeIcon,
+} from 'react-native-heroicons/solid';
 
 type MainTabsProps = {};
 
@@ -23,7 +27,7 @@ const MainTabs: FC<MainTabsProps> = () => {
         component={TopTabs}
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color }) => <Cog6ToothIcon size={26} color={color} />,
+          tabBarIcon: ({ color }) => <Cog8ToothIcon size={26} color={color} />,
         }}
       />
     </Tab.Navigator>
