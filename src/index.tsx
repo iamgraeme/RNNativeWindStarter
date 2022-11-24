@@ -1,17 +1,17 @@
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import MainStackScreen from '@routes/stacks/MainStack';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import React, { useState } from 'react';
-import colors from 'tailwindcss/colors';
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
+import MainStackScreen from "@routes/stacks/MainStack";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import React, { useState } from "react";
+import colors from "tailwindcss/colors";
 
 const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: colors.orange[500],
-    background: colors.orange[100],
-    card: colors.orange[500],
-    text: colors.white,
+    primary: colors.pink[500],
+    background: colors.white,
+    card: colors.white,
+    text: colors.slate[900],
     border: colors.slate[200],
     notification: colors.red[500],
   },
