@@ -1,21 +1,21 @@
 import FancyButton from '@ui/FancyButton';
-import React, {FC} from 'react';
-import {Controller, useForm} from 'react-hook-form';
-import {Text, TextInput, View} from 'react-native';
+import React, { FC } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { Text, TextInput, View } from 'react-native';
 type LoginScreenProps = {};
 
 const LoginScreen: FC<LoginScreenProps> = () => {
   const {
     control,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm({
     defaultValues: {
       emailAddress: '',
       password: '',
     },
   });
-  const onSubmit = data => console.log(data);
+  const onSubmit = (data) => console.log(data);
   return (
     <View className="flex-1 justify-center items-center m-6">
       <Controller
@@ -23,9 +23,9 @@ const LoginScreen: FC<LoginScreenProps> = () => {
         rules={{
           required: true,
         }}
-        render={({field: {onChange, onBlur, value}}) => (
+        render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
-            className="border-2 bg-white p-4 border-emerald-500 w-full rounded-md mb-4"
+            className="border-2 bg-white p-4 border-orange-500 w-full rounded-md mb-4"
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
@@ -41,9 +41,9 @@ const LoginScreen: FC<LoginScreenProps> = () => {
         rules={{
           maxLength: 100,
         }}
-        render={({field: {onChange, onBlur, value}}) => (
+        render={({ field: { onChange, onBlur, value } }) => (
           <TextInput
-            className="border-2 bg-white p-4 border-emerald-500 w-full rounded-md mb-4"
+            className="border-2 bg-white p-4 border-orange-500 w-full rounded-md mb-4"
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
