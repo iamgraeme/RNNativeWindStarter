@@ -20,3 +20,7 @@ npx react-native init MyAwesomeProject --template react-native-nativewind-reactq
 ## :bookmark: License
 
 This project is MIT licensed.
+
+## :coffee: Buy me a Coffee
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/iamgrae.me)
