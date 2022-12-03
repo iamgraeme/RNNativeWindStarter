@@ -1,23 +1,28 @@
 import React, { FC } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import FastImage from 'react-native-fast-image';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Product } from '@utils/types';
+import { MainStackParamList } from '@routes/stacks/MainStack';
 
 type ProductCardProps = {
-  title: string;
-  price: number;
-  image: string;
-  category: string;
-  index: number;
+  product: Product;
 };
 
 const numCols = 2;
 
 const ProductCard: FC<ProductCardProps> = (props) => {
-  const { title: name, price, category, image, index } = props;
+  const { product, index } = props;
+  const { title: name, price, category, image } = product;
+  const navigation = useNavigation<StackNavigationProp<MainStackParamList>>();
 
   return (
     <View className={`flex-1 mb-4 ${index % numCols !== 0 ? 'ml-4' : 'ml-0'}`}>
-      <View className="border border-gray-300 shadow bg-white rounded-xl overflow-hidden relative">
+      <TouchableOpacity
+        className="border border-gray-300 shadow bg-white rounded-xl overflow-hidden relative"
+        onPress={() => navigation.navigate('DetailScreen', { product })}
+      >
         <FastImage
           source={{ uri: image }}
           className="h-48"
@@ -36,14 +41,8 @@ const ProductCard: FC<ProductCardProps> = (props) => {
           >
             {name}
           </Text>
-          <Text className="text-gray-500 text-sm font-bold mt-2">
-            {price.toLocaleString('en-US', {
-              style: 'currency',
-              currency: 'USD',
-            })}
-          </Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };

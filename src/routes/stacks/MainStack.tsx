@@ -1,27 +1,35 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {
+  createStackNavigator,
+  StackNavigationProp,
+} from '@react-navigation/stack';
 import ModalScreen from '@screens/ModalScreen';
+import DetailScreen from '@screens/DetailScreen';
 import { FC } from 'react';
 import * as React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { XMarkIcon } from 'react-native-heroicons/solid';
 import { useNavigation, useTheme } from '@react-navigation/native';
-import { GenericNavigationProps } from '@routes/types';
 import MainTabs from '@routes/tabs/MainTabs';
+
+export type MainStackParamList = {
+  DetailScreen: { product: Product } | undefined;
+};
 
 const MainStack = createStackNavigator();
 
 const MainStackScreen: FC = () => {
   const { colors } = useTheme();
-  const navigation = useNavigation<GenericNavigationProps>();
+  const navigation = useNavigation<StackNavigationProp<MainStackParamList>>();
   return (
-    <MainStack.Navigator>
+    <MainStack.Navigator screenOptions={{ headerBackTitle: 'Back' }}>
       <MainStack.Screen
         name="Root"
         options={{ headerShown: false }}
         component={MainTabs}
       />
+      <MainStack.Screen name="DetailScreen" component={DetailScreen} />
       <MainStack.Screen
-        name="Modal"
+        name="Cart"
         component={ModalScreen}
         options={{
           headerShown: true,

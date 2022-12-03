@@ -13,6 +13,8 @@ const Products = lazy(() => import('@ui/Products'));
 
 const HomeScreen: FC<HomeScreenProps> = ({ navigation }) => {
   const { colors } = useTheme();
+
+  console.log('HomeScreen rendered');
   return (
     <View className="m-6 flex-1 justify-center items-center">
       <Suspense
@@ -21,7 +23,7 @@ const HomeScreen: FC<HomeScreenProps> = ({ navigation }) => {
         <Products />
       </Suspense>
       <FancyButton
-        onPress={() => navigation.navigate('Modal')}
+        onPress={() => navigation.navigate('Cart')}
         buttonText="Open Cart"
       />
     </View>

@@ -25,9 +25,10 @@ const Products = () => {
         className="mt-4"
         data={data}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item, index }) => (
-          <ProductCard {...item} index={index} />
-        )}
+        renderItem={({ item, index }) => {
+          console.log(item);
+          return <ProductCard product={item} index={index} />;
+        }}
         numColumns={2}
         windowSize={windowHeight || 100}
         showsVerticalScrollIndicator={false}
