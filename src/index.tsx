@@ -1,8 +1,8 @@
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import MainStackScreen from "@routes/stacks/MainStack";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import React, { useState } from "react";
-import colors from "tailwindcss/colors";
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import MainStackScreen from '@routes/stacks/MainStack';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
+import colors from 'tailwindcss/colors';
 
 const theme = {
   ...DefaultTheme,
@@ -18,7 +18,13 @@ const theme = {
 };
 
 const App = () => {
-  const [queryClient] = useState(() => new QueryClient());
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        suspense: true,
+      },
+    },
+  });
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer theme={theme}>

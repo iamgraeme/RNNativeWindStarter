@@ -1,6 +1,6 @@
 {
   "name": "RNNativeWindReactQueryNavigationTS",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -23,6 +23,7 @@
     "react": "18.1.0",
     "react-hook-form": "^7.39.4",
     "react-native": "0.70.6",
+    "react-native-fast-image": "^8.6.3",
     "react-native-gesture-handler": "^2.8.0",
     "react-native-heroicons": "^3.2.0",
     "react-native-pager-view": "^6.1.1",
